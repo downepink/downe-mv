@@ -40,5 +40,6 @@ theme_override_styles/panel = SubResource("StyleBoxEmpty_46d4g")
 material = SubResource("ShaderMaterial_shp3f")
 layout_mode = 2
 texture = ExtResource("2_oabgf")
+expand_mode = 2
 
 [node name="Audio" type="AudioStreamPlayer" parent="."]
