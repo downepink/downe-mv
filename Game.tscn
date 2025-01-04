@@ -1,0 +1,44 @@
+[gd_scene load_steps=5 format=3 uid="uid://bbcg81bgndkiv"]
+
+[ext_resource type="Shader" path="res://Shaders/earthbound.gdshader" id="1_qjr6x"]
+[ext_resource type="Texture2D" uid="uid://clasf3cgeka3v" path="res://Textures/chromatic.png" id="2_oabgf"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_46d4g"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_shp3f"]
+shader = ExtResource("1_qjr6x")
+shader_parameter/screen_height = 1080.0
+shader_parameter/amplitude = 0.7
+shader_parameter/frequency = 1.5
+shader_parameter/speed = 0.3
+shader_parameter/amplitude_vertical = 2.0
+shader_parameter/frequency_vertical = 0.3
+shader_parameter/speed_vertical = 0.4
+shader_parameter/scroll_direction = Vector2(0, 0)
+shader_parameter/scrolling_speed = 0.1
+shader_parameter/enable_palette_cycling = false
+shader_parameter/palette_speed = 0.1
+
+[node name="Game" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_46d4g")
+
+[node name="Texture" type="TextureRect" parent="Panel"]
+material = SubResource("ShaderMaterial_shp3f")
+layout_mode = 2
+texture = ExtResource("2_oabgf")
+
+[node name="Audio" type="AudioStreamPlayer" parent="."]
